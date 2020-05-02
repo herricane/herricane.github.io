@@ -1317,6 +1317,7 @@ article .content .caption {
   color: #111;
 }
 .search-input {
+  font-family: "Menlo", "Meslo LG", monospace;
   padding: 4px 7px;
   width: 100%;
   outline: none;
@@ -1324,7 +1325,7 @@ article .content .caption {
   border-radius: 5px;
   background-color: #e2e0de;
   color: #363533;
-  font-size: 1.2rem;
+  font-size: 1rem;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
