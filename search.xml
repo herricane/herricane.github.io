@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>First Hexo Post</title>
-      <link href="/2020/05/01/First-Hexo-Post/"/>
-      <url>/2020/05/01/First-Hexo-Post/</url>
-      
-        <content type="html"><![CDATA[<p>This is my first Hexo post.</p><h1 id="Head-1-Test"><a href="#Head-1-Test" class="headerlink" title="Head 1 Test"></a>Head 1 Test</h1><h2 id="Head-2-Test"><a href="#Head-2-Test" class="headerlink" title="Head 2 Test"></a>Head 2 Test</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"Hello World"</span>)</span><br></pre></td></tr></table></figure><p>中文测试</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2020/04/30/hello-world/"/>
       <url>/2020/04/30/hello-world/</url>
