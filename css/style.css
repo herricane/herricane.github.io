@@ -1203,6 +1203,16 @@ article .content .caption {
     content: "|";
   }
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  background-color: #ededed;
+  border-left: 3px solid #cc2a41;
+  list-style: none;
+}
+.post-copyright li {
+  line-height: 27px;
+}
 #archive .post-list {
   padding: 0;
 }
