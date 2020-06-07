@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Recently I am taking a course of algorithms from Princeton here on Coursera. From now on I will take notes of this course and put them in the blog for the sake of revision.   Dynamic ConnectivityDyna">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithms - Week 1">
+<meta property="og:url" content="https://hetopia.top/2020/06/07/Algorithms-Week-1/index.html">
+<meta property="og:site_name" content="Hetopia">
+<meta property="og:description" content="Recently I am taking a course of algorithms from Princeton here on Coursera. From now on I will take notes of this course and put them in the blog for the sake of revision.   Dynamic ConnectivityDyna">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/06/08/lfITd1JtWGo5cYO.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/08/CdINV24Bbq9XLxM.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/08/KfDE7rFbo9OcTek.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/08/ixdhg35kTAIptwO.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/08/mgOHi2YGN4Dac9b.png">
+<meta property="article:published_time" content="2020-06-07T21:41:31.000Z">
+<meta property="article:modified_time" content="2020-06-07T21:41:31.795Z">
+<meta property="article:author" content="Chenhui Xu">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Algorithms">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/08/lfITd1JtWGo5cYO.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/my-favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/my-android-icon.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/my-apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Algorithms - Week 1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/05/27/%E5%A4%9C%E6%99%9A%E5%B0%8F%E8%AE%B0-%E5%A3%B9/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&text=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&is_video=false&description=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithms - Week 1&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Week-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&name=Algorithms - Week 1&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/&t=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dynamic-Connectivity"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Connectivity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-find"><span class="toc-number">2.</span> <span class="toc-text">Quick-find</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation"><span class="toc-number">2.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complexity"><span class="toc-number">2.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-union"><span class="toc-number">3.</span> <span class="toc-text">Quick-union</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation-1"><span class="toc-number">3.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complexity-1"><span class="toc-number">3.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-union-Improvements"><span class="toc-number">4.</span> <span class="toc-text">Quick-union Improvements</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Improvement-1-Weighting"><span class="toc-number">4.1.</span> <span class="toc-text">Improvement 1: Weighting</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation-2"><span class="toc-number">4.1.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complexity-2"><span class="toc-number">4.1.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Improvement-2-Path-Compression"><span class="toc-number">4.2.</span> <span class="toc-text">Improvement 2: Path Compression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation-3"><span class="toc-number">4.2.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complexity-3"><span class="toc-number">4.2.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">4.3.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Algorithms - Week 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hetopia</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-07T21:41:31.000Z" itemprop="datePublished">2020-06-07</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Algorithms/" rel="tag">Algorithms</a>, <a class="tag-link" href="/tags/Java/" rel="tag">Java</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>Recently I am taking a course of algorithms from Princeton <a href="https://www.coursera.org/learn/algorithms-part1/home/welcome" target="_blank" rel="noopener">here</a> on Coursera. From now on I will take notes of this course and put them in the blog for the sake of revision. </p>
+</blockquote>
+<h2 id="Dynamic-Connectivity"><a href="#Dynamic-Connectivity" class="headerlink" title="Dynamic Connectivity"></a>Dynamic Connectivity</h2><p><strong>Dynamic connectivity</strong> problem is that given a set of N objects and a <strong>union command</strong> that connects two objects, make a <strong>find/connected query</strong> that determines whether there is a path connecting certain two objects. An example is shown in the following figure. </p>
+<img src="https://i.loli.net/2020/06/08/lfITd1JtWGo5cYO.png" alt="image-20200607220237079" style="zoom:33%;" />
+
+
+
+<p>Here we define “is connected to” is an equivalence relation: </p>
+<ul>
+<li>Reflexive: <em>p</em> is connected to <em>p</em>.</li>
+<li>Symmetric: if <em>p</em> is connected to <em>q</em>, then <em>q</em> is connected to <em>p</em>.</li>
+<li>Transitive: if <em>p</em> is connected to <em>q</em> and <em>q</em> is connected to <em>r</em>, then <em>p</em> is connected to <em>r</em>.</li>
+</ul>
+<p><strong>Connected components</strong> are the maximal sets of objects that are mutually connected, as shown in the figure. </p>
+<img src="https://i.loli.net/2020/06/08/CdINV24Bbq9XLxM.png" alt="image-20200607220159524" style="zoom:33%;" />
+
+
+
+<p>This problem can be specified as a Java class called <strong>UF</strong> (union find) which contains two methods, one to implement union and the other to check connectivity. Note that the number of objects and operations can be huge, so an efficient algorithm is desired. </p>
+<h2 id="Quick-find"><a href="#Quick-find" class="headerlink" title="Quick-find"></a>Quick-find</h2><p><strong>Quick-find</strong> is an algorithm for solving dynamic connectivity problem, and it is a so-called “eager algorithm”. </p>
+<ul>
+<li>Data structure: an integer array indexed by objects.</li>
+<li>Interpretation: two objects are connected if and only if their entries in the array are the same.</li>
+</ul>
+<p>In this example 0, 5 and 6 has the same id, so these three objects are connected. It is similar for the rest. </p>
+<img src="https://i.loli.net/2020/06/08/KfDE7rFbo9OcTek.png" alt="image-20200607221705848" style="zoom:33%;" />
+
+
+
+<p>For the <strong>find</strong> operation, we just need to check if <em>p</em> and <em>q</em> have the same id. For the <strong>union</strong> of <em>p</em> and <em>q</em>, we need to merge components containing <em>p</em> and <em>q</em> by changing all entries whose id equals <code>id[p]</code> to <code>id[q]</code>. </p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickFindUF</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</span><br><span class="line">    </span><br><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="title">QuickFindUF</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// set id of each object to itself</span></span><br><span class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        	id[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// check whether p and q are in the same component</span></span><br><span class="line">        <span class="keyword">return</span> id[p] == id[q];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// change all entries with id[p] to id[q]</span></span><br><span class="line">        <span class="keyword">int</span> pid = id[p];</span><br><span class="line">        <span class="keyword">int</span> qid = id[q];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; id.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (id[i] = pid) &#123;</span><br><span class="line">                id[i] = qid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><table>
+<thead>
+<tr>
+<th align="center">algorithm</th>
+<th align="center">initialize</th>
+<th align="center">union</th>
+<th align="center">find</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">quick-find</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p>The <strong>quick-find</strong> algorithm takes N accesses to initialize the array, N for <strong>union</strong> command and 1 for <strong>find</strong>. That is to say, it takes N<sup>2</sup> array accesses to process sequence of N union commands on N objects, which is too expensive. Generally speaking, quadratic time is much too slow for large problems. </p>
+<h2 id="Quick-union"><a href="#Quick-union" class="headerlink" title="Quick-union"></a>Quick-union</h2><p><strong>Quick-union</strong> is another algorithm to solve dynamic connectivity problem and it’s called “lazy approach” to algorithm design where we avoid doing thing until we have to. </p>
+<ul>
+<li><p>Data structure: an integer array <code>id[]</code> of size N.</p>
+</li>
+<li><p>Interpretation: <code>id[i]</code> is parent of <code>i</code>.</p>
+</li>
+</ul>
+<img src="https://i.loli.net/2020/06/08/ixdhg35kTAIptwO.png" alt="Screen Shot 2020-06-07 at 22.20.21" style="zoom:33%;" />
+
+
+
+<p>For the <strong>find</strong> operation we should check if <em>p</em> and <em>q</em> have the same root. For the <strong>union</strong> of <em>p</em>  and <em>q</em> we should set the id of <em>p</em>‘s root to the id of <em>q</em>‘s root to merge two components. </p>
+<h3 id="Implementation-1"><a href="#Implementation-1" class="headerlink" title="Implementation"></a>Implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickUnionUF</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">QuickUnionUF</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// set id of each object to itself</span></span><br><span class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            id[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// chase parent pointer until reach root</span></span><br><span class="line">        <span class="keyword">while</span> (i != id[i]) &#123;</span><br><span class="line">            i = id[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// check if p and q have same root</span></span><br><span class="line">        <span class="keyword">return</span> root(p) == root(q);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// change root of p to point to root of q</span></span><br><span class="line">        <span class="keyword">int</span> i = root(p);</span><br><span class="line">        <span class="keyword">int</span> j = root(q);</span><br><span class="line">        id[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Complexity-1"><a href="#Complexity-1" class="headerlink" title="Complexity"></a>Complexity</h3><table>
+<thead>
+<tr>
+<th align="center">algorithm</th>
+<th align="center">initialize</th>
+<th align="center">union</th>
+<th align="center">find</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">quick-find</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">quick-union</td>
+<td align="center">N</td>
+<td align="center">N (including cost of finding roots)</td>
+<td align="center">N (worst case)</td>
+</tr>
+</tbody></table>
+<p>The <strong>quick-union</strong> algorithm is faster but still too slow for some cases. The defects are that trees can grow too tall and for the worst case <strong>find</strong> can include N array accesses.</p>
+<h2 id="Quick-union-Improvements"><a href="#Quick-union-Improvements" class="headerlink" title="Quick-union Improvements"></a>Quick-union Improvements</h2><h3 id="Improvement-1-Weighting"><a href="#Improvement-1-Weighting" class="headerlink" title="Improvement 1: Weighting"></a>Improvement 1: Weighting</h3><p><strong>Weighted quick-union</strong> can avoid tall trees by keeping track of the size of each tree. We can balance the trees by always linking root of smaller trees to root of larger trees.</p>
+<img src="https://i.loli.net/2020/06/08/mgOHi2YGN4Dac9b.png" alt="image-20200607222528842" style="zoom:33%;" />
+
+
+
+<ul>
+<li>Data structure: Same as quick-union, but maintain extra array <code>sz[i]</code> to count number of objects in the tree rooted at <code>i</code>.</li>
+</ul>
+<p>The <strong>find</strong> operation is the same as quick-union. The <strong>union</strong> operation is modified to: </p>
+<ul>
+<li>Link root of smaller tree to the root of larger tree.</li>
+<li>Update <code>sz[i]</code> array.</li>
+</ul>
+<h4 id="Implementation-2"><a href="#Implementation-2" class="headerlink" title="Implementation"></a>Implementation</h4><p>Snippets of modified codes: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root(p) == root(q);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = root(p);</span><br><span class="line">    <span class="keyword">int</span> j = root(q);</span><br><span class="line">    <span class="keyword">if</span> (i == j) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (sz[i] &lt; sz[j]) &#123;</span><br><span class="line">        id[i] = j;</span><br><span class="line">        sz[j] += sz[i];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        id[j] = i;</span><br><span class="line">        sz[i] += sz[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Complexity-2"><a href="#Complexity-2" class="headerlink" title="Complexity"></a>Complexity</h4><ul>
+<li>Running time:<ul>
+<li>Find: takes time proportional to the depth of <em>p</em> or <em>q</em>.</li>
+<li>Union: takes constant time, given roots.</li>
+</ul>
+</li>
+<li>Proposition: Depth of any node is at most log<sub>2</sub> N.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">algorithm</th>
+<th align="center">initialize</th>
+<th align="center">union</th>
+<th align="center">find</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">quick-find</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">quick-union</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td align="center">weighted QU</td>
+<td align="center">N</td>
+<td align="center">log<sub>2</sub> N</td>
+<td align="center">log<sub>2</sub> N</td>
+</tr>
+</tbody></table>
+<h3 id="Improvement-2-Path-Compression"><a href="#Improvement-2-Path-Compression" class="headerlink" title="Improvement 2: Path Compression"></a>Improvement 2: Path Compression</h3><p><strong>Quick-union with path compression</strong> is that after computing the root of <em>p</em>, set the id of each examined node to point to that root. </p>
+<h4 id="Implementation-3"><a href="#Implementation-3" class="headerlink" title="Implementation"></a>Implementation</h4><p>We can make every other node in the path point to its grandparent thereby halving path length. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (i != id[i]) &#123;</span><br><span class="line">        <span class="comment">// add only the following line</span></span><br><span class="line">        id[i] = id[id[i]];</span><br><span class="line">        i = id[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Complexity-3"><a href="#Complexity-3" class="headerlink" title="Complexity"></a>Complexity</h4><p>In theory WQUPC is not quite linear, but in practice it is linear. </p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>The following table shows the time of M union-find operations on a set of N objects.</p>
+<table>
+<thead>
+<tr>
+<th align="center">algorithm</th>
+<th align="center">worst-case time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">quick-find</td>
+<td align="center">M N</td>
+</tr>
+<tr>
+<td align="center">quick-union</td>
+<td align="center">M N</td>
+</tr>
+<tr>
+<td align="center">weighted QU</td>
+<td align="center">N + M log N</td>
+</tr>
+<tr>
+<td align="center">QU + path compression</td>
+<td align="center">N + M log N</td>
+</tr>
+<tr>
+<td align="center">Weighted QU + path compression</td>
+<td align="center">N + M lg<sup>*</sup> N</td>
+</tr>
+</tbody></table>
+
+  </div>
+</article>
+
+  <div>
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>作者:  </strong>Chenhui Xu</a>
+    </li>
+    <li class="post-copyright-link">
+      <strong>文章链接:  </strong>
+      <a href="/2020/06/07/Algorithms-Week-1/" target="_blank"
+        title="Algorithms - Week 1">https://hetopia.top/2020/06/07/Algorithms-Week-1/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:  </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license"
+        href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"
+        title="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)">CC BY-NC-SA 4.0</a>
+       许可协议。转载请注明出处!
+    </li>
+  </ul>
+</div>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div id="vcomments" class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '#vcomments',
+        visitor: true,
+        appId: 'Xlj5VrrMULN7pA4lKWOPF9CR-MdYXbMMI',
+        appKey: '2FeCWI5sKGiSdTaLFenCICvn',
+        placeholder: 'Leave a comment...',
+        avatar: 'mp',
+        lang: 'en',
+        emojiCDN: '//i0.hdslb.com/bfs/emote/',
+        emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        }
+    })
+</script>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dynamic-Connectivity"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Connectivity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-find"><span class="toc-number">2.</span> <span class="toc-text">Quick-find</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation"><span class="toc-number">2.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complexity"><span class="toc-number">2.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-union"><span class="toc-number">3.</span> <span class="toc-text">Quick-union</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation-1"><span class="toc-number">3.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complexity-1"><span class="toc-number">3.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-union-Improvements"><span class="toc-number">4.</span> <span class="toc-text">Quick-union Improvements</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Improvement-1-Weighting"><span class="toc-number">4.1.</span> <span class="toc-text">Improvement 1: Weighting</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation-2"><span class="toc-number">4.1.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complexity-2"><span class="toc-number">4.1.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Improvement-2-Path-Compression"><span class="toc-number">4.2.</span> <span class="toc-text">Improvement 2: Path Compression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation-3"><span class="toc-number">4.2.1.</span> <span class="toc-text">Implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complexity-3"><span class="toc-number">4.2.2.</span> <span class="toc-text">Complexity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">4.3.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&text=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&is_video=false&description=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithms - Week 1&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Week-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&name=Algorithms - Week 1&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/&t=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020
+    Chenhui Xu
+    ❤️ Powered by 
+    <a href="https://hexo.io/" target="_blank" rel="noopener" style="text-decoration: none;">
+      Hexo
+    </a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/archives/">Writing</a></li>
+        
+        <li><a href="/tags/">Tags</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-161452365-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":20,"vOffset":-30},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
+</html>
