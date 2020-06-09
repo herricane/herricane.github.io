@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Algorithms: Analysis of Algorithms</title>
+      <link href="/2020/06/09/Algorithms-Analysis-of-Algorithms/"/>
+      <url>/2020/06/09/Algorithms-Analysis-of-Algorithms/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>A few notes about how to analyze an algorithm.</p></blockquote><h2 id="Order-of-growth-Classifications"><a href="#Order-of-growth-Classifications" class="headerlink" title="Order-of-growth Classifications"></a>Order-of-growth Classifications</h2><img src="https://i.loli.net/2020/06/10/SeFixAD78HyZpJ4.png" alt="image-20200609223744804" style="zoom:33%;" /><h2 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h2><ul><li>Goal: Given a sorted array and a key, find index of the key in the array.</li><li>Idea: Compare the key against the middle entry. </li></ul><h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>, hi = a.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// "3-way compare"</span></span><br><span class="line">        <span class="keyword">if</span> (key &lt; a[mid]) &#123;</span><br><span class="line">            hi = mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; a[mid]) &#123;</span><br><span class="line">            lo = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Mathematical-Analysis"><a href="#Mathematical-Analysis" class="headerlink" title="Mathematical Analysis"></a>Mathematical Analysis</h3><ul><li>Proposition: Binary search uses at most <strong>1 + log<sub>2</sub> N</strong> compares to search in a sorted array of size N.</li><li>Definition: T(N) = # compares to binary search in a sorted subarray of size ≤ N.</li><li>Proof sketch</li></ul><img src="https://i.loli.net/2020/06/10/nkOulYG51eiIw2s.png" alt="image-20200609205524055" style="zoom:33%;" /><h3 id="An-N2-log-N-Algorithm-for-3-Sum"><a href="#An-N2-log-N-Algorithm-for-3-Sum" class="headerlink" title="An N2 log N Algorithm for 3-Sum"></a>An N<sup>2</sup> log N Algorithm for 3-Sum</h3><p>Sorting-based algorithm: </p><ol><li>Sort the N distinct numbers.</li><li>For each pair of numbers <code>a[i]</code> and <code>a[j]</code>, binary search for <code>-(a[i] + a[j])</code>. (So the order of growth is N<sup>2</sup> log N.)</li></ol><h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="Typical-Memory-Usage-for-Primitive-Types-and-Arrays"><a href="#Typical-Memory-Usage-for-Primitive-Types-and-Arrays" class="headerlink" title="Typical Memory Usage for Primitive Types and Arrays"></a>Typical Memory Usage for Primitive Types and Arrays</h3><img src="https://i.loli.net/2020/06/10/8NlvqORbEULTjZw.png" alt="image-20200609225757605" style="zoom:33%;" /><h3 id="Typical-Memory-Usage-for-Objects-in-Java"><a href="#Typical-Memory-Usage-for-Objects-in-Java" class="headerlink" title="Typical Memory Usage for Objects in Java"></a>Typical Memory Usage for Objects in Java</h3><ul><li>Object overhead: 16 bytes.</li><li>Reference: 8 bytes.</li><li>Padding: round up to multiple of 8 bytes.</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Algorithms </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Algorithms: Union Find</title>
       <link href="/2020/06/07/Algorithms-Union-Find/"/>
       <url>/2020/06/07/Algorithms-Union-Find/</url>
