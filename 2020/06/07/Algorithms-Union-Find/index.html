@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Recently I am taking a course of algorithms from Princeton here on Coursera. From now on I will take notes of this course and put them in the blog for the sake of revision.   Dynamic ConnectivityDyna">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Algorithms - Week 1">
-<meta property="og:url" content="https://hetopia.top/2020/06/07/Algorithms-Week-1/index.html">
+<meta property="og:title" content="Algorithms: Union Find">
+<meta property="og:url" content="https://hetopia.top/2020/06/07/Algorithms-Union-Find/index.html">
 <meta property="og:site_name" content="Hetopia">
 <meta property="og:description" content="Recently I am taking a course of algorithms from Princeton here on Coursera. From now on I will take notes of this course and put them in the blog for the sake of revision.   Dynamic ConnectivityDyna">
 <meta property="og:locale" content="en_US">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/08/mgOHi2YGN4Dac9b.png">
 <meta property="og:image" content="https://coursera.cs.princeton.edu/algs4/assignments/percolation/percolation-backwash.png">
 <meta property="article:published_time" content="2020-06-07T21:41:31.000Z">
-<meta property="article:modified_time" content="2020-06-09T17:54:27.934Z">
+<meta property="article:modified_time" content="2020-06-09T18:41:15.066Z">
 <meta property="article:author" content="Chenhui Xu">
 <meta property="article:tag" content="Algorithms">
 <meta property="article:tag" content="Java">
@@ -45,7 +45,7 @@
         
     
     <!-- title -->
-    <title>Algorithms - Week 1</title>
+    <title>Algorithms: Union Find</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -101,17 +101,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&text=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&is_video=false&description=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Algorithms - Week 1&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Week-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&name=Algorithms - Week 1&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/&t=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Union-Find/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&text=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&is_video=false&description=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithms: Union Find&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Union-Find/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&name=Algorithms: Union Find&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&t=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -128,7 +128,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Algorithms - Week 1
+        Algorithms: Union Find
     </h1>
 
 
@@ -357,8 +357,8 @@
     </li>
     <li class="post-copyright-link">
       <strong>文章链接:  </strong>
-      <a href="/2020/06/07/Algorithms-Week-1/" target="_blank"
-        title="Algorithms - Week 1">https://hetopia.top/2020/06/07/Algorithms-Week-1/</a>
+      <a href="/2020/06/07/Algorithms-Union-Find/" target="_blank"
+        title="Algorithms: Union Find">https://hetopia.top/2020/06/07/Algorithms-Union-Find/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:  </strong>
@@ -468,17 +468,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&text=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&is_video=false&description=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Algorithms - Week 1&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Week-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&title=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Week-1/&name=Algorithms - Week 1&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Week-1/&t=Algorithms - Week 1" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hetopia.top/2020/06/07/Algorithms-Union-Find/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&text=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&is_video=false&description=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithms: Union Find&body=Check out this article: https://hetopia.top/2020/06/07/Algorithms-Union-Find/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&title=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&name=Algorithms: Union Find&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://hetopia.top/2020/06/07/Algorithms-Union-Find/&t=Algorithms: Union Find" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
