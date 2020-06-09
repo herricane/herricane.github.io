@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/08/mgOHi2YGN4Dac9b.png">
 <meta property="og:image" content="https://coursera.cs.princeton.edu/algs4/assignments/percolation/percolation-backwash.png">
 <meta property="article:published_time" content="2020-06-07T21:41:31.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:28:06.725Z">
+<meta property="article:modified_time" content="2020-06-09T17:54:27.934Z">
 <meta property="article:author" content="Chenhui Xu">
 <meta property="article:tag" content="Algorithms">
 <meta property="article:tag" content="Java">
@@ -345,6 +345,7 @@
 <p>However there is a <strong>backwash</strong> issue when we address the problem this way. Backwash means that some sites may be mistakenly considered as a <strong>full site</strong>. (A full site is an open site that can be connected to the top row via a chain of neighboring open sites.) This is because when the system percolates, the virtual top and the virtual bottom are connected, and in this case if a site is connected only to the bottom (but not the top), it will still be considered as connected to the top, making wrong judgment about whether it is a full site. This figure illustrates the backwash issue. </p>
 <p><img src="https://coursera.cs.princeton.edu/algs4/assignments/percolation/percolation-backwash.png" alt="Percolation backwash"></p>
 <p>In order to solve this problem, we can have two <code>WeightedQuickUnionUF</code> objects instead of one: One has n+2 elements including the virtual top and bottom, and the other one has n+1 elements that includes only the virtual top. When checking if a system percolates, we use the former one; and when checking if a site is a full site, we use the latter one. In this way we solve the problem with more space occupied.</p>
+<p><em>P.S.</em> An interesting thing about the assignment is that it will also check our coding style when we submit our codes. Things like whether to use <code>final</code> when we initialize a variable, whether deprecated methods are used and whether constants are predefined as a <code>static final</code> variable are something that I never noticed before. Gotta take care of these!</p>
 
   </div>
 </article>
