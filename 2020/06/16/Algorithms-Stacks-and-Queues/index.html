@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/15/gxN1Q9dzkXrnijP.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/15/F2uptB8oCgiN1k7.png">
 <meta property="article:published_time" content="2020-06-16T14:02:25.000Z">
-<meta property="article:modified_time" content="2020-06-18T21:05:04.360Z">
+<meta property="article:modified_time" content="2020-06-19T13:30:19.770Z">
 <meta property="article:author" content="Chenhui Xu">
 <meta property="article:tag" content="Stack">
 <meta property="article:tag" content="Queue">
@@ -267,6 +267,17 @@
 </ul>
 <h2 id="Assignment-2-Deques-and-Randomized-Queues"><a href="#Assignment-2-Deques-and-Randomized-Queues" class="headerlink" title="Assignment 2: Deques and Randomized Queues"></a>Assignment 2: Deques and Randomized Queues</h2><p>The specification of the assignment is <a href="https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php" target="_blank" rel="noopener">here</a>.</p>
 <p>My submission is <a href="https://github.com/herricane/Deques-and-Randomized-Queues" target="_blank" rel="noopener">here</a>.</p>
+<p>A bonus of this assignment is that in <code>Permutation</code>, the maximum size of any <code>RandomizedQueue</code> object created is equal to k. This is known as the <strong>Reservoir Sampling</strong>.</p>
+<p>When we are given an array of <em>n</em> items that is too large to fit in the memory and we need to choose <em>k</em> simple random samples from it, a simple and efficient algorithm is known as <strong>Algorithm R</strong>. </p>
+<ol>
+<li>Keep the first <em>k</em> items in the memory.</li>
+<li>For the <em>i-th</em> item (<em>i</em> &gt; <em>k</em>): generate a random integer <em>j</em> in [1, <em>i</em>].<ul>
+<li>If <em>j</em> ≤ <em>k</em>, replace the <em>j-th</em> item in the memory with the new one.</li>
+<li>If <em>j</em> &gt; <em>k</em>, discard the new one.</li>
+</ul>
+</li>
+</ol>
+<p>It can be mathematically proved that in this way, each item has the same probability of getting chosen, and also the maximum memory used is <em>k</em>. More details can be found in <a href="https://en.wikipedia.org/wiki/Reservoir_sampling" target="_blank" rel="noopener">Wikipedia</a>.</p>
 
   </div>
 </article>
