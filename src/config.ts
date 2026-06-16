@@ -8,15 +8,15 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Herricane's Blog",
+	title: "Colineon's Blog",
 	subtitle: "A personal blog about technology, life, and everything in between.",
 	lang: "zh_CN",
 	themeColor: {
-		hue: 250,
+		hue: 128,
 		fixed: false,
 	},
 	banner: {
-		enable: false,
+		enable: true,
 		src: "assets/images/demo-banner.png",
 		position: "center",
 		credit: {
@@ -47,7 +47,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/demo-avatar.png",
-	name: "Herricane",
+	name: "Colineon",
 	bio: "A curious mind exploring technology, building things, and writing about the journey.",
 	links: [
 		{

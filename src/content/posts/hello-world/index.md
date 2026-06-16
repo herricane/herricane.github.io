@@ -2,7 +2,6 @@
 title: Hello, World!
 published: 2026-06-16
 description: 我的第一篇博客文章，记录搭建这个博客的过程。
-image:
 tags: [Blog, Astro, Fuwari]
 category: Tech
 draft: false

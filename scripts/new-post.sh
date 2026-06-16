@@ -4,6 +4,7 @@
 #   ./scripts/new-post.sh "如何组装一台服务器" "how-to-build-server"
 #   ./scripts/new-post.sh "How to build a server"
 #   ./scripts/new-post.sh "How to build a server" "custom-slug"
+# 注意：若无封面图，则需删除image行
 
 if [ -z "$1" ]; then
   echo "用法:"
@@ -51,4 +52,4 @@ MDEOF
 
 echo "✅ 已创建: ${DIR}/"
 echo "   ├── index.md"
-echo "   └── 封面图放这里，image: ./cover.jpg"
+echo "   └── cover.jpg # 若无封面图，则需删除image行"
