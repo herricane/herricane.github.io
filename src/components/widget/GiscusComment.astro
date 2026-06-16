@@ -1,0 +1,34 @@
+---
+const giscusConfig = {
+  repo: "herricane/herricane.github.io",
+  repoId: "MDEwOlJlcG9zaXRvcnkyNTc4MTg2NTg=",
+  category: "Announcements",
+  categoryId: "DIC_kwDOD14AIs4C_Qv7",
+  mapping: "pathname",
+  strict: "0",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "bottom",
+  theme: "preferred_color_scheme",
+  lang: "zh-CN",
+};
+---
+<div class="giscus-wrapper mb-6">
+  <script
+    src="https://giscus.app/client.js"
+    data-repo={giscusConfig.repo}
+    data-repo-id={giscusConfig.repoId}
+    data-category={giscusConfig.category}
+    data-category-id={giscusConfig.categoryId}
+    data-mapping={giscusConfig.mapping}
+    data-strict={giscusConfig.strict}
+    data-reactions-enabled={giscusConfig.reactionsEnabled}
+    data-emit-metadata={giscusConfig.emitMetadata}
+    data-input-position={giscusConfig.inputPosition}
+    data-theme={giscusConfig.theme}
+    data-lang={giscusConfig.lang}
+    crossorigin="anonymous"
+    async
+  >
+  </script>
+</div>
