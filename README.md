@@ -18,7 +18,7 @@ pnpm build            # 构建静态文件到 dist/
 
 ```bash
 # 中文标题 → 需要英文目录名
-./scripts/new-post.sh "如何组装一台服务器" "how-to-build-server"
+./scripts/new-post.sh "如何组装一台服务器" "how-to-build-a-server"
 
 # 英文标题 → 自动生成目录名
 ./scripts/new-post.sh "How to build a server"
