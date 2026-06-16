@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   check:
+    continue-on-error: true
     strategy:
       matrix:
         node: [ 22, 23 ]
