@@ -9,7 +9,8 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "Colineon's Blog",
-	subtitle: "A personal blog about technology, life, and everything in between.",
+	subtitle:
+		"A personal blog about technology, life, and everything in between.",
 	lang: "zh_CN",
 	themeColor: {
 		hue: 128,
