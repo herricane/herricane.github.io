@@ -72,5 +72,20 @@
     "postcss-import": "^16.1.1",
     "postcss-nesting": "^13.0.2"
   },
-  "packageManager": "pnpm@9.14.4"
+  "packageManager": "pnpm@9.14.4",
+  "pnpm": {
+    "overrides": {
+      "form-data": ">=4.0.6",
+      "glob": ">=10.5.0",
+      "minimatch": ">=9.0.7",
+      "brace-expansion": ">=2.0.3",
+      "serialize-javascript": ">=7.0.3",
+      "tar": ">=7.5.16",
+      "postcss": ">=8.5.15",
+      "follow-redirects": ">=1.16.0",
+      "js-yaml": ">=4.2.0",
+      "yaml": ">=2.9.0",
+      "axios": ">=1.18.0"
+    }
+  }
 }
